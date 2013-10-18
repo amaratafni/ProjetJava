@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+body {
+	position: static;
+	width: 900px;
+	left: 50%;
+	margin-left: -450px;
+	
+}
+#idAjouterAnnonce{
+	margin-top: -20%;
+	margin-left: 40%;
+}
+.apply{
+	margin-left: 107%;
+}
+.applyAnnuler{
+	margin-left: 40%;
+}
