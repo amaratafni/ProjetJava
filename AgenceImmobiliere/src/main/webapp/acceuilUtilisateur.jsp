@@ -25,6 +25,7 @@
 <title>Insert title here</title>
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
+<link href="css/acceuilUser.css" rel="stylesheet">
 
 </head>
 
@@ -64,7 +65,16 @@
 					</rich:toolBarGroup>
 				</rich:toolBar>
 			</div>
-
+			<h3>Bienvenu dans votre espace personnelle :</h3>
+			<h:form>
+			<div id="botonDeconecter">
+				<a4j:commandLink action="pageAuth" styleClass="botonDeconecter">Deconnection</a4j:commandLink>
+			</div>
+			<div id="botonDeconecte4r">
+				<a4j:commandLink action="#{scriptInsertBean.inserer}" styleClass="botonDeconecter">Inserre</a4j:commandLink>
+			</div>
+			</h:form>
+			<hr>
 			<!--  partie content **************************************************************************** -->
 			<div id="content">
 				<div id="sidebar" class="sidebar" style="width: 180px;">
@@ -74,17 +84,42 @@
 						iconCollapsedTopGroup="chevronDown">
 						<rich:panelMenuGroup label="GestionAnnonce " expanded="true">
 							<rich:panelMenuItem>
-							<h:outputLink value="ajouterAdresse.jsf"><h:outputText value="Ajouter une annonce" /></h:outputLink></rich:panelMenuItem>							
-							<rich:panelMenuItem label="Supprimer une annonce">	</rich:panelMenuItem>					
-							<rich:panelMenuItem label="Supprimer annonce"></rich:panelMenuItem>
-							<rich:panelMenuItem label="Modifier annonce"></rich:panelMenuItem>
-							<rich:panelMenuItem label="Recherche annonce"></rich:panelMenuItem>
+								<h:outputLink value="ajouterAdresse.jsf">
+									<h:outputText value="Ajouter une annonce" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+							<rich:panelMenuItem>
+								<h:outputLink value="updateAnnonce.jsf">
+									<h:outputText value="Modifier annonces" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+							<rich:panelMenuItem>
+								<h:outputLink value="suprimerAnnonce.jsf">
+									<h:outputText value="Supprimer annonce" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+
+
 						</rich:panelMenuGroup>
 						<rich:panelMenuGroup label="Gestion de filtre " expanded="true">
-							<rich:panelMenuItem label="Ajouter un filtre"></rich:panelMenuItem>
-							<rich:panelMenuItem label="Désactiver un filtre"></rich:panelMenuItem>
+							<rich:panelMenuItem>
+
+								<h:outputLink value="ajouterFiltre.jsf">
+									<h:outputText value="Ajouter un filtre" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+							<rich:panelMenuItem>
+								<h:outputLink value="desactiverFiltre.jsf">
+									<h:outputText value="Désactiver un filtre" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+							<rich:panelMenuItem>
+								<h:outputLink value="supprimerFiltre.jsf">
+									<h:outputText value="Supprimer un filtre" />
+								</h:outputLink>
+							</rich:panelMenuItem>
 						</rich:panelMenuGroup>
-						
+
 						<rich:panelMenuGroup label="Recherche avancer " expanded="true">
 							<rich:panelMenuItem label="recherche annonce"></rich:panelMenuItem>
 						</rich:panelMenuGroup>

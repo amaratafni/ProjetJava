@@ -31,8 +31,14 @@
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
+<link href="css/style2.css" rel="stylesheet">
+<link href="css/style3.css" rel="stylesheet">
+<link href="css/connexion.css" rel="stylesheet">
+<link href="css/ajouterAnnonce.css" rel="stylesheet">
+<link href="css/ajouterAdresseetanonnce.css" rel="stylesheet">
+<link href="css/updateAnnonce.css" rel="stylesheet">
 
-
+<link href="css/propre.css" rel="stylesheet">
 </head>
 <body>
 	
@@ -52,15 +58,19 @@
 
 					<h:panelGrid columns="3">
 						<h:panelGroup>
-							<h:outputText value="alias :" />
-							<h:inputText value="#{utilisateurBean.alias}" id="alias"
-								required="true" validator="#{utilisateurBean.validerAliasAuthentification}" />
-							<h:message for="alias" style="color: red" />
+							<h:outputText value="Login :" />
 							<br>
-							<h:outputText value="Email : " />
-							<h:inputText value="#{utilisateurBean.email}" id="email"
-								required="true" validator="#{utilisateurBean.validerEmailAuthentification}" />
+							<h:inputText value="#{utilisateurBean.alias}" id="alias"
+								required="true" validator="#{utilisateurBean.validerAliasAuthentification}" styleClass="champsaisie"/>
+							<h:message for="alias" style="color: red" />
+							
+							<br>
+							<h:outputText value="Mot Passe : " />
+							<br>
+							<h:inputSecret value="#{utilisateurBean.email}" id="email"
+								required="true" validator="#{utilisateurBean.validerEmailAuthentification}" styleClass="champsaisie" />
 							<h:message for="email" style="color: red" />
+						
 						</h:panelGroup>
 					</h:panelGrid>
 

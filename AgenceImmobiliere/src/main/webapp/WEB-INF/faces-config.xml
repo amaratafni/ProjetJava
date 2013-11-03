@@ -25,5 +25,81 @@
             <from-outcome>pageAuth</from-outcome>
             <to-view-id>/acceuil.jsp</to-view-id>
         </navigation-case>
-    </navigation-rule>
+        <navigation-case>
+            <from-outcome>detail</from-outcome>
+            <to-view-id>/modifcation.jsp</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>detailFiltre</from-outcome>
+            <to-view-id>/modifcationFiltre.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>list</from-outcome>
+            <to-view-id>/updateAnnonce.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>revenirPageAnnonce</from-outcome>
+            <to-view-id>/suprimerAnnonce.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pageSuprimerAnnonce</from-outcome>
+            <to-view-id>/suprimerAnnonce.jsp</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>detailPageSupAnnonce</from-outcome>
+            <to-view-id>/detailSupressionAnnonce.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>            
+            <from-outcome>listUtilisateur</from-outcome>
+            <to-view-id>/supprimerUtilisateur.jsp</to-view-id>
+        </navigation-case>
+         
+        
+        <navigation-case>
+            <from-outcome>succesAjoueAnnotation</from-outcome>
+            <to-view-id>/acceuilUtilisateur.jsp</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>detailUtilisateur</from-outcome>
+            <to-view-id>/modificationUtilisateur.jsp</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>ajouterFiltre</from-outcome>
+            <to-view-id>/ajouterFiltre.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listFiltre</from-outcome>
+            <to-view-id>/desactiverFiltre.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>supprimerFiltre</from-outcome>
+            <to-view-id>/supprimerFiltre.jsp</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>succesAjouterFiltre</from-outcome>
+            <to-view-id>/succesAjouterFiltre.jsp</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>detailFiltreSupprimer</from-outcome>
+            <to-view-id>/detailFiltreSupprimer.jsp</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>detailDesactiverUser</from-outcome>
+            <to-view-id>/detailDesactiverUser.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>desactiverUtilisateur</from-outcome>
+            <to-view-id>/desactiverUtilisateur.jsp</to-view-id>
+            
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>resultatRecherche</from-outcome>
+            <to-view-id>/resultatRecherche.jsp</to-view-id>
+           
+        </navigation-case>
+        
+        </navigation-rule>
+        
 </faces-config>

@@ -29,50 +29,63 @@
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
+<link href="css/style2.css" rel="stylesheet">
+<link href="css/style3.css" rel="stylesheet">
+<link href="css/connexion.css" rel="stylesheet">
+<link href="css/ajouterAnnonce.css" rel="stylesheet">
 </head>
 <body>
 	<f:view>
-			<c:import url="/acceuil.jsp"></c:import>	
-		<h:form>						
-			<div id ="idInscriptionUtilisateur">
-			<rich:spacer height="200px"></rich:spacer>
-			<center>
-				<rich:panel
-					style="background-image:url(#{facesContext.externalContext.requestContextPath}/images/ajax/userauth.png);
+		<c:import url="/acceuil.jsp"></c:import>
+		<h:form>
+			<div id="idInscriptionUtilisateur">
+				<rich:spacer height="200px"></rich:spacer>
+				<center>
+					<rich:panel
+						style="background-image:url(#{facesContext.externalContext.requestContextPath}/images/ajax/userauth.png);
                             background-repeat:no-repeat;background-position:-35px -15px;
                             ;width:400px;"
-					header="Formulaire d'inscription" styleClass="panel_3">
-					<h:panelGrid>
-						<h:panelGroup>						
-							<h:outputText value="Alia :" />
-							<h:inputText value="#{utilisateurBean.alias}" id="alias"
-								required="true" validator="#{utilisateurBean.validerAlias}" />
-							<h:message for="alias" style="color: red" />
-							<br>
-							<h:outputText value="Name : " />
-							<h:inputText value="#{utilisateurBean.name}" id="name"
-								 />
-							<h:message for="name" style="color: red" />
-							<br>
-							<h:outputText value="Pren : " />
-							<h:inputText value="#{utilisateurBean.prenom}" id="prenom"
-								 />
-							<h:message for="prenom" style="color: red" />
-							<br>
-							<h:outputText value="Email : " />
-							<h:inputText value="#{utilisateurBean.email}" id="email"
-								 />
-							<h:message for="emai" style="color: red" />
-							<br>
-							<h:outputText value="Date:" />
-							<rich:calendar value="#{utilisateurBean.dateInscri}"></rich:calendar>
-						</h:panelGroup>
-					</h:panelGrid>
-					<rich:spacer height="30px"></rich:spacer>
-					<h:commandButton value="Connexion"
-						 action="#{utilisateurBean.createUser}"  />
-				</rich:panel>
-			</center>			
+						header="Formulaire d'inscription" styleClass="panel_3">
+						<h:panelGrid>
+							<h:panelGroup>
+								<h:outputText value="Login :" />
+								<br>
+
+								<h:inputText value="#{utilisateurBean.alias}" id="alias" requiredMessage="TODO TODOTODO TODO TODO"
+									required="true" validator="#{utilisateurBean.validerAlias}" />
+								<h:message for="alias" style="color: red" />
+								<br>
+								<br>
+								<h:outputText value="Name : " />
+								<br>
+								<h:inputText value="#{utilisateurBean.name}" id="name" />
+								<h:message for="name" style="color: red" />
+
+								<br>
+								<h:outputText value="Prenom : " />
+								<br>
+								<h:inputText value="#{utilisateurBean.prenom}" id="prenom" />
+								<h:message for="prenom" style="color: red" />
+
+								<br>
+								<h:outputText value="Email : " />
+								<br>
+								<h:inputText value="#{utilisateurBean.email}" id="email" />
+								<h:message for="emai" style="color: red" />
+								<br>
+								
+
+								<%-- <h:outputText value="Date:" />
+								<br>
+								<rich:calendar value="#{utilisateurBean.dateInscri}"></rich:calendar>
+								<br> --%>
+							</h:panelGroup>
+						</h:panelGrid>
+						<rich:spacer height="30px"></rich:spacer>
+						<h:commandButton value="Connexion"
+							action="#{utilisateurBean.createUser}" />
+					</rich:panel>
+				</center>
 			</div>
 		</h:form>
 

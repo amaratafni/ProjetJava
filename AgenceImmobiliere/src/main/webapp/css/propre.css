@@ -1,0 +1,26 @@
+#butonEnregister{
+	margin-left:  134px;
+}
+
+label
+{
+    display: block; /* La balise devient de type block. */
+    width: 200px;
+    float: left;
+}
+.avesettings {       
+    width: 100px;
+    height: 25px;
+    display: block;     
+}
+#container{
+	margin-top: -29%;
+	-moz-box-shadow: 20px -10px teal;
+	-webkit-box-shadow: 10px -10px teal;
+     box-shadow: 2px -10px teal;
+	}
+#butonAnnuler{
+	margin-left:  250px;
+	 display: block;
+	  margin-top: -4%;	
+}

@@ -30,9 +30,11 @@
 <title>Insert title here</title>
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
+<link href="css/updateAnnonce.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
-
-
+<link href="css/ajouterAnnonce.css" rel="stylesheet">
+<link href="css/ajouterAdresseetanonnce.css" rel="stylesheet">
+<link href="css/propre.css" rel="stylesheet">
 </head>
 <body>
 	
@@ -53,14 +55,21 @@
 					<h:panelGrid columns="3">
 						<h:panelGroup>
 							<h:outputText value="Login :" />
+							<br>
+							
 							<h:inputText value="#{adminBean.login}" id="login"
 								required="true" validator="#{adminBean.validerLogin}" />
 							<h:message for="login" style="color: red" />
+							
 							<br>
-							<h:outputText value="Pass : " />
-							<h:inputText value="#{adminBean.motPasse}" id="motPasse"
+							<h:outputText value="Mot Passe : " />
+							
+							<br>
+							<h:inputSecret value="#{adminBean.motPasse}" id="motPasse"
 								required="true" validator="#{adminBean.validerMotPasse}" />
 							<h:message for="motPasse" style="color: red" />
+							
+							<br>
 						</h:panelGroup>
 					</h:panelGrid>
 

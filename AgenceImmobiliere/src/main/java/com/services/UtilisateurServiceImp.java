@@ -1,11 +1,13 @@
 package com.services;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.UtilisateurDaoInterface;
+import com.model.Annonce;
 import com.model.Utilisateur;
 
 @Service( "utilisateurService" )
@@ -63,4 +65,16 @@ public class UtilisateurServiceImp implements UtilisateurInterface {
         return getDaoInterface().findByCreteria( champs, value );
     }
 
+    @Override
+    public void deleteUtilisateurByAnnonce( Set<Annonce> annonces ) {
+
+        getDaoInterface().deleteUtilisateurByAnnonce( annonces );
+
+    }
+
+    @Override
+    public int getIDUser( String alias ) {
+        // TODO Auto-generated method stub
+        return getDaoInterface().getIDUser( alias );
+    }
 }

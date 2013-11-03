@@ -42,7 +42,7 @@
 						</f:facet>
 					</rich:dropDownMenu>
 					<rich:dropDownMenu>
-						<f:facet name="label">							
+						<f:facet name="label">
 							<a4j:commandLink action="pageAuth" styleClass="styleLik">Home</a4j:commandLink>
 						</f:facet>
 
@@ -76,30 +76,40 @@
 						iconCollapsedTopGroup="chevronDown">
 						<rich:panelMenuGroup label="Administrateur " expanded="true">
 							<rich:panelMenuItem>
-								<h:outputLink value="connexion.jsf"><h:outputText value="Connexion" /></h:outputLink>
+								<h:outputLink value="connexion.jsf">
+									<h:outputText value="Connexion" />
+								</h:outputLink>
 							</rich:panelMenuItem>
-														
+
 							<rich:panelMenuItem label="Contact Admin" onclick="a();">
 							</rich:panelMenuItem>
-							
+
 						</rich:panelMenuGroup>
 						<rich:panelMenuGroup label="Gestion des Utilisateur"
 							expanded="true">
 							<rich:panelMenuItem>
-							<h:outputLink value="inscription.jsf"><h:outputText value="Inscription" /></h:outputLink>
+								<h:outputLink value="inscription.jsf">
+									<h:outputText value="Inscription" />
+								</h:outputLink>
 							</rich:panelMenuItem>
 							<rich:panelMenuItem>
-							<h:outputLink value="authUtilisteur.jsf"><h:outputText value="Authentifcation" /></h:outputLink>
-							</rich:panelMenuItem>							
-						</rich:panelMenuGroup>						
+								<h:outputLink value="authUtilisteur.jsf">
+									<h:outputText value="Authentifcation" />
+								</h:outputLink>
+							</rich:panelMenuItem>
+						</rich:panelMenuGroup>
 
 						<rich:panelMenuGroup label="Recherche avancer " expanded="true">
-							<rich:panelMenuItem label="recherche annonce"></rich:panelMenuItem>
+							<rich:panelMenuItem>
+								<h:outputLink value="recherche.jsf">
+									<h:outputText value="recherche annonce" />
+								</h:outputLink>															
+							</rich:panelMenuItem>
 						</rich:panelMenuGroup>
 					</rich:panelMenu>
-				</div>				
+				</div>
 			</div>
-					
+				
 			<!--  partie footer **************************************************************************** -->
 			<div id="footer"></div>
 		</h:form>
