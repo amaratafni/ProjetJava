@@ -1,0 +1,44 @@
+@CHARSET "ISO-8859-1";
+
+.header {
+	text-align: center;
+
+}
+.testmoo{
+	width:600px;
+	height: 300px;
+	margin-left: 40%;
+	margin-top: -32%;
+	position: absolute;
+}
+.rich-panel-header{
+	text-align: center;
+	font-size: 12px;
+}
+#FormulaiteAjouePosition{
+	margin-left: 20%;
+	margin-top: 10%;
+}
+.boutonvalider{
+	margin-left: 16%;
+}
+.panelsaimpleconfirmation{
+	width:350px;
+	height: 200px;
+	margin-left: 40%;
+	margin-top: -32%;
+	position: absolute;
+}
+#tabeRecherche {
+	margin-left: 30%;
+	margin-top: -32%;
+}
+#formulaireAjouterClient{
+	margin-top: -10%;
+}
+#formulaiteAuthentifcation{
+	
+	margin-top: -60%; 
+	margin-left: 30%;
+	
+}

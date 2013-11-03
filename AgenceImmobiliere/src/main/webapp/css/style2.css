@@ -1,0 +1,61 @@
+@CHARSET "ISO-8859-1";
+
+.rich-ddmenu-label-select{
+   /*  background-color:  #fae6b0;
+    border-color: red; */
+    background-color: green;
+    border-color: green;
+    text-decoration: none;
+}
+#content{
+	margin-top: 30px;
+}
+
+.rich-ddmenu-label-select{
+	color: red;
+	text-decoration: none;
+}
+.rich-ddmenu-label{
+	font-size: 16px;	
+	color: white;
+	text-decoration: none;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+}
+.styleLik{
+	font-size: 16px;
+	color: white;	
+	
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+}
+/*je vais chercher a mofifier la color du toolbar*/
+.rich-laguna-panel-no-header{
+	width: 30%;
+	height: 100px;
+	
+}
+.rf-p-hdr{
+	font-weight: 40%;
+}
+.rf-p-b{
+	font-size: 40px;
+}
+body {
+	position: absolute;
+	width: 900px;
+	left: 10%;
+	margin-left: 50px;
+
+}
+.classeTabPanel{
+	height: 10%;
+	width: 46.5%;
+	margin-left: 35%;
+	margin-top: 1%;
+	border: none;
+	position: absolute;
+}
+.azul{
+  size: 40px;
+}
