@@ -1,6 +1,7 @@
 package com.beans;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,6 +13,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
+import org.richfaces.component.html.HtmlScrollableDataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -27,16 +29,30 @@ import com.services.UtilisateurInterface;
 public class UtilisateurBean {
 
     @Autowired
-    UtilisateurInterface     utilisateurInterface;
-    private int              idUser;
-    private String           alias;
-    private String           name;
-    private String           prenom;
-    private String           email;
-    private Date             dateInscri;
-    private Set<Annonce>     annonces     = new HashSet<Annonce>( 0 );
-    private Set<Statistique> statistiques = new HashSet<Statistique>( 0 );
-    private Set<Filtre>      filtres      = new HashSet<Filtre>( 0 );
+    UtilisateurInterface                      utilisateurInterface;
+    private int                               idUser;
+    private String                            alias;
+    private String                            name;
+    private String                            prenom;
+    private String                            email;
+    private Date                              dateInscri;
+    private Set<Annonce>                      annonces     = new HashSet<Annonce>( 0 );
+    private Set<Statistique>                  statistiques = new HashSet<Statistique>( 0 );
+    private Set<Filtre>                       filtres      = new HashSet<Filtre>( 0 );
+
+    private List<Utilisateur>                 utilisateurListTest;
+    private transient HtmlScrollableDataTable utilisateurTable;
+
+    public Date getSysdate() {
+        return new Date();
+    }
+
+    public void setSysdate( SimpleDateFormat sysdate ) {
+        this.sysdate = sysdate;
+    }
+
+    private Utilisateur curentUtilisateur;
+    SimpleDateFormat    sysdate;
 
     // valeur pour tester mes champs
 
@@ -47,6 +63,15 @@ public class UtilisateurBean {
 
     }
 
+    public Utilisateur getCurentUtilisateur() {
+        return curentUtilisateur;
+    }
+
+    public void setCurentUtilisateur( Utilisateur curentUtilisateur ) {
+        this.curentUtilisateur = curentUtilisateur;
+    }
+
+    @SuppressWarnings( "rawtypes" )
     public void validerAlias( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -75,17 +100,39 @@ public class UtilisateurBean {
         }
     }
 
+    // methode pour récupérer la date du jour :
+
+    public String getSysDate() {
+
+        java.util.Date today;
+        today = new java.util.Date();
+        SimpleDateFormat DateFormat = new SimpleDateFormat( "dd/MM/yyyy" );
+        setSysdate( DateFormat );
+        return DateFormat.format( today );
+    }
+
     // methode pour créer un Utilisateur :
     public void createUser() throws IOException {
 
         Utilisateur aUtilisateur = new Utilisateur();
         aUtilisateur.setAlias( getAlias() );
-        aUtilisateur.setDateInscri( getDateInscri() );
+
         aUtilisateur.setEmail( getEmail() );
         aUtilisateur.setName( getName() );
         aUtilisateur.setPrenom( getPrenom() );
+        aUtilisateur.setEtat( true );
+        // je récupère la date d'aujordh'ui :
+
+        java.util.Date today;
+        today = new java.util.Date();
+        SimpleDateFormat DateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
+
+        setSysdate( DateFormat );
+
+        aUtilisateur.setDateInscri( getSysdate() );
+
         utilisateurInterface.crieerUtilisateur( aUtilisateur );
-        FacesContext.getCurrentInstance().getExternalContext().redirect( "SuccesInscription.jsf" );
+        FacesContext.getCurrentInstance().getExternalContext().redirect( "succes.jsf" );
 
     }
 
@@ -96,6 +143,7 @@ public class UtilisateurBean {
 
     }
 
+    @SuppressWarnings( "rawtypes" )
     public void validerAliasAuthentification( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -110,22 +158,27 @@ public class UtilisateurBean {
             Utilisateur aAdmin = (Utilisateur) iterator.next();
 
             if ( aAdmin.getAlias().equals( valeur ) ) {
+                if ( aAdmin.getEtat() == true ) {
+                    estValide = true;
+                    System.out.println( "i am in egalité: voilà .getAdmin" + aAdmin.getAlias() );
+                    System.out.println( "voilà mes truc : " + valeur );
 
-                estValide = true;
-                System.out.println( "i am in egalité: voilà .getAdmin" + aAdmin.getAlias() );
-                System.out.println( "voilà mes truc : " + valeur );
+                }
+
             }
         }
 
         if ( !estValide ) {
 
             throw new ValidatorException( new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR, "Entrée non valide alias n'existe pas ",
-                    "Entrée non valide alias n'existe pas" ) );
+                    FacesMessage.SEVERITY_ERROR,
+                    "Entrée non valide alias n'existe pas, ou vous etes bloqué par l'admin ",
+                    "Entrée non valide alias n'existe pas, ou bloqué par l'admin" ) );
         }
     }
 
     // verification l'eamil:
+    @SuppressWarnings( "rawtypes" )
     public void validerEmailAuthentification( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -234,5 +287,27 @@ public class UtilisateurBean {
     public void setFiltres( Set<Filtre> filtres ) {
         this.filtres = filtres;
     }
+
+    @SuppressWarnings( "unchecked" )
+    public List<Utilisateur> getUtilisateurListTest() {
+
+        utilisateurListTest = getUtilisateurInterface().getAllUtilisteur();
+
+        return utilisateurListTest;
+    }
+
+    public void setUtilisateurListTest( List<Utilisateur> utilisateurListTest ) {
+        this.utilisateurListTest = utilisateurListTest;
+    }
+
+    public HtmlScrollableDataTable getUtilisateurTable() {
+        return utilisateurTable;
+    }
+
+    public void setUtilisateurTable( HtmlScrollableDataTable utilisateurTable ) {
+        this.utilisateurTable = utilisateurTable;
+    }
+
+    // for supression :
 
 }

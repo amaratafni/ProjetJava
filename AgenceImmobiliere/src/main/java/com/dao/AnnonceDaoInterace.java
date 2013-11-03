@@ -22,4 +22,16 @@ public interface AnnonceDaoInterace {
 
     public List<Annonce> findByCreteria( String champs, Object value );
 
+    public List<Annonce> DeleteCreteria( String champs, Object value );
+
+    void deleteByClasse( Annonce persistentInstance );
+
+    public void deleteAnnonce( List ass );
+
+    public List getAllAnnonceByIdUser( int idUser );
+
+    public List getAllAnnonceByIdAdress( int idAdresseCourant );
+
+    public void deleteAnnonceByID( int idUser );
+
 }

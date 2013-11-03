@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,12 @@ public class AnnonceDAO implements AnnonceDaoInterace {
     @Transactional
     @Override
     public void deleteAnnonce( int idAnnonce ) {
-        sessionFactory.getCurrentSession().delete( getAnnonce( idAnnonce ) );
+        // sessionFactory.getCurrentSession().delete( getAnnonce( idAnnonce ) );
+        Query query = sessionFactory.getCurrentSession().createSQLQuery(
+                "delete from Annonce  where id_user = :id_user" )
+                .addEntity( Annonce.class )
+                .setParameter( "id_user", idAnnonce );
+        query.executeUpdate();
 
     }
 
@@ -62,7 +68,7 @@ public class AnnonceDAO implements AnnonceDaoInterace {
         log.debug( "finding Annonce instance by example" );
         try {
             List<Annonce> results = (List<Annonce>) sessionFactory.getCurrentSession()
-                    .createCriteria( "com.dao.Annonce" )
+                    .createCriteria( "com.model.Annonce" )
                     .add( create( instance ) )
                     .list();
             log.debug( "find by example successful, result size: " + results.size() );
@@ -79,6 +85,60 @@ public class AnnonceDAO implements AnnonceDaoInterace {
         List crit = sessionFactory.getCurrentSession().createCriteria( Annonce.class )
                 .add( Restrictions.eq( champs, value ) ).list();
         return crit;
+    }
+
+    @Override
+    @Transactional
+    public List<Annonce> DeleteCreteria( String champs, Object value ) {
+        List crit = sessionFactory.getCurrentSession().createCriteria( Annonce.class )
+                .add( Restrictions.eq( champs, value ) )
+                .list();
+
+        return crit;
+    }
+
+    @Override
+    @Transactional
+    public void deleteByClasse( Annonce persistentInstance ) {
+        System.out.println( "je suis la pour imprimer dans annonxe dao" + persistentInstance.getIdAnnonce() );
+
+        sessionFactory.getCurrentSession().delete( persistentInstance );
+
+    }
+
+    @SuppressWarnings( "rawtypes" )
+    @Override
+    @Transactional
+    public void deleteAnnonce( List ass ) {
+        sessionFactory.getCurrentSession().delete( ass );
+    }
+
+    @SuppressWarnings( "rawtypes" )
+    @Override
+    @Transactional
+    public List getAllAnnonceByIdUser( int idUser ) {
+        List allAnonce = sessionFactory.getCurrentSession()
+                .createSQLQuery( "select * from annonce  where id_user = :id_user" ).addEntity( Annonce.class
+                ).setParameter( "id_user", idUser ).list();
+        return allAnonce;
+    }
+
+    @SuppressWarnings( "rawtypes" )
+    @Override
+    @Transactional
+    public List getAllAnnonceByIdAdress( int idAdresseCourant ) {
+        // c faut j'ai besoin de toute les annonces enfait qui
+        List allAnonces = sessionFactory.getCurrentSession().
+                createSQLQuery( "select * from annonce  where id_adresse = :id_adresse" ).addEntity( Annonce.class )
+                .setParameter( "id_adresse", idAdresseCourant ).list();
+        return allAnonces;
+    }
+
+    @Override
+    @Transactional
+    public void deleteAnnonceByID( int idUser ) {
+        sessionFactory.getCurrentSession().delete( getAnnonce( idUser ) );
+
     }
 
 }

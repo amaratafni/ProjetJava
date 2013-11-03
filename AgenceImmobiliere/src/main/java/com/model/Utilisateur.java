@@ -26,12 +26,23 @@ import org.hibernate.annotations.GenericGenerator;
         , schema = "public" )
 public class Utilisateur implements java.io.Serializable {
 
-    private int              idUser;
-    private String           alias;
-    private String           name;
-    private String           prenom;
-    private String           email;
-    private Date             dateInscri;
+    private int    idUser;
+    private String alias;
+    private String name;
+    private String prenom;
+    private String email;
+    private Date   dateInscri;
+
+    @Column( name = "etat" )
+    public Boolean getEtat() {
+        return etat;
+    }
+
+    public void setEtat( Boolean etat ) {
+        this.etat = etat;
+    }
+
+    private Boolean          etat;
     private Set<Annonce>     annonces     = new HashSet<Annonce>( 0 );
     private Set<Statistique> statistiques = new HashSet<Statistique>( 0 );
     private Set<Filtre>      filtres      = new HashSet<Filtre>( 0 );

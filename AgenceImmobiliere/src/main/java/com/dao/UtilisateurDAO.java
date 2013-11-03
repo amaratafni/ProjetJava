@@ -3,6 +3,7 @@ package com.dao;
 import static org.hibernate.criterion.Example.create;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.model.Annonce;
 import com.model.Utilisateur;
 
 @Repository
@@ -63,7 +65,7 @@ public class UtilisateurDAO implements UtilisateurDaoInterface {
         log.debug( "finding Utilisateur instance by example" );
         try {
             List<Utilisateur> results = (List<Utilisateur>) sessionFactory.getCurrentSession()
-                    .createCriteria( "com.dao.Utilisateur" )
+                    .createCriteria( "com.model.Utilisateur" )
                     .add( create( instance ) )
                     .list();
             log.debug( "find by example successful, result size: " + results.size() );
@@ -84,4 +86,23 @@ public class UtilisateurDAO implements UtilisateurDaoInterface {
         return crit;
     }
 
+    @Override
+    @Transactional
+    public void deleteUtilisateurByAnnonce( Set<Annonce> annonces ) {
+        // TODO Auto-generated method stub
+        sessionFactory.getCurrentSession().delete( annonces );
+    }
+
+    @Override
+    @Transactional
+    public int getIDUser( String alias ) {
+        sessionFactory.getCurrentSession().
+                createSQLQuery( "select id_user from Utilisateur  where alias = :alias" )
+                .addEntity( Utilisateur.class )
+                .setParameter( "alias", alias );
+
+        // int b = Integer.parseInt( a );
+        // System.out.println( "voilà le id que j'ai recupèrer" + a );
+        return 0;
+    }
 }

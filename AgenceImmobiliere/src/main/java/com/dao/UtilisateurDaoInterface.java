@@ -1,7 +1,9 @@
 package com.dao;
 
 import java.util.List;
+import java.util.Set;
 
+import com.model.Annonce;
 import com.model.Utilisateur;
 
 public interface UtilisateurDaoInterface {
@@ -20,5 +22,9 @@ public interface UtilisateurDaoInterface {
     public List<Utilisateur> findByExample( Utilisateur utilisateur );
 
     public List<Utilisateur> findByCreteria( String champs, Object value );
+
+    public void deleteUtilisateurByAnnonce( Set<Annonce> annonces );
+
+    public int getIDUser( String alias );
 
 }

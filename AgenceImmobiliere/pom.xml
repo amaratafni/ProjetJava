@@ -82,17 +82,37 @@
 			<version>1.2_13</version>
 		</dependency>
 		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>mojarra-jsf-impl</artifactId>
+			<version>2.0.0-b04</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>1.2_13</version>
 			<scope>runtime</scope>
 		</dependency>
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -115,8 +135,8 @@
 			<artifactId>jsf-facelets</artifactId>
 			<version>1.1.14</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-impl</artifactId>
@@ -132,13 +152,14 @@
 			<artifactId>richfaces-ui</artifactId>
 			<version>3.3.4.Final</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.0.4</version>
 		</dependency>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -165,7 +186,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>3.2.2.RELEASE</version>
 		</dependency>
-		
+
 		<!-- hibernate: -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -200,8 +221,8 @@
 			<artifactId>spring-orm</artifactId>
 			<version>3.2.4.RELEASE</version>
 		</dependency>
-		
-		<!--  Postgres SQL -->
+
+		<!-- Postgres SQL -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>

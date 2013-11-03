@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -37,6 +38,7 @@ public class Annonce implements java.io.Serializable {
     private Integer     numTel;
     private Integer     prix;
     private Date        datePublication;
+    private byte[]      bytes;
 
     public Annonce() {
     }
@@ -91,6 +93,7 @@ public class Annonce implements java.io.Serializable {
         this.bien = bien;
     }
 
+    // LAZY veut dire c moi qui ca charger
     @ManyToOne( fetch = FetchType.LAZY )
     @JoinColumn( name = "id_user", nullable = false )
     public Utilisateur getUtilisateur() {
@@ -209,6 +212,16 @@ public class Annonce implements java.io.Serializable {
 
     public void setDatePublication( Date datePublication ) {
         this.datePublication = datePublication;
+    }
+
+    @Lob
+    @Column( name = "photo" )
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public void setBytes( byte[] bytes ) {
+        this.bytes = bytes;
     }
 
 }

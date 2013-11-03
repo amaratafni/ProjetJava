@@ -9,4 +9,5 @@ public interface AdminDaoInterface {
     public List<Admin> findByExample( Admin admin );
 
     public List<Admin> findByCreteria( String login, Object value );
+
 }
