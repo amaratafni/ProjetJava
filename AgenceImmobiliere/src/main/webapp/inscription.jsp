@@ -29,6 +29,7 @@
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
+<<<<<<< HEAD
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
@@ -86,6 +87,52 @@
 							action="#{utilisateurBean.createUser}" />
 					</rich:panel>
 				</center>
+=======
+</head>
+<body>
+	<f:view>
+			<c:import url="/acceuil.jsp"></c:import>	
+		<h:form>						
+			<div id ="idInscriptionUtilisateur">
+			<rich:spacer height="200px"></rich:spacer>
+			<center>
+				<rich:panel
+					style="background-image:url(#{facesContext.externalContext.requestContextPath}/images/ajax/userauth.png);
+                            background-repeat:no-repeat;background-position:-35px -15px;
+                            ;width:400px;"
+					header="Formulaire d'inscription" styleClass="panel_3">
+					<h:panelGrid>
+						<h:panelGroup>						
+							<h:outputText value="Alia :" />
+							<h:inputText value="#{utilisateurBean.alias}" id="alias"
+								required="true" validator="#{utilisateurBean.validerAlias}" />
+							<h:message for="alias" style="color: red" />
+							<br>
+							<h:outputText value="Name : " />
+							<h:inputText value="#{utilisateurBean.name}" id="name"
+								 />
+							<h:message for="name" style="color: red" />
+							<br>
+							<h:outputText value="Pren : " />
+							<h:inputText value="#{utilisateurBean.prenom}" id="prenom"
+								 />
+							<h:message for="prenom" style="color: red" />
+							<br>
+							<h:outputText value="Email : " />
+							<h:inputText value="#{utilisateurBean.email}" id="email"
+								 />
+							<h:message for="emai" style="color: red" />
+							<br>
+							<h:outputText value="Date:" />
+							<rich:calendar value="#{utilisateurBean.dateInscri}"></rich:calendar>
+						</h:panelGroup>
+					</h:panelGrid>
+					<rich:spacer height="30px"></rich:spacer>
+					<h:commandButton value="Connexion"
+						 action="#{utilisateurBean.createUser}"  />
+				</rich:panel>
+			</center>			
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 			</div>
 		</h:form>
 

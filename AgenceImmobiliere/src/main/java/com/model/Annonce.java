@@ -10,7 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+<<<<<<< HEAD
 import javax.persistence.Lob;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -38,7 +41,10 @@ public class Annonce implements java.io.Serializable {
     private Integer     numTel;
     private Integer     prix;
     private Date        datePublication;
+<<<<<<< HEAD
     private byte[]      bytes;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     public Annonce() {
     }
@@ -93,7 +99,10 @@ public class Annonce implements java.io.Serializable {
         this.bien = bien;
     }
 
+<<<<<<< HEAD
     // LAZY veut dire c moi qui ca charger
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     @ManyToOne( fetch = FetchType.LAZY )
     @JoinColumn( name = "id_user", nullable = false )
     public Utilisateur getUtilisateur() {
@@ -214,6 +223,7 @@ public class Annonce implements java.io.Serializable {
         this.datePublication = datePublication;
     }
 
+<<<<<<< HEAD
     @Lob
     @Column( name = "photo" )
     public byte[] getBytes() {
@@ -224,4 +234,6 @@ public class Annonce implements java.io.Serializable {
         this.bytes = bytes;
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

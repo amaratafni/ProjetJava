@@ -9,21 +9,29 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
+<<<<<<< HEAD
 import org.richfaces.component.html.HtmlScrollableDataTable;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.model.Admin;
+<<<<<<< HEAD
 import com.model.Annonce;
 import com.model.Utilisateur;
 import com.services.AdminInterface;
 import com.services.AnnonceInterface;
+=======
+import com.services.AdminInterface;
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
 @Controller( "adminBean" )
 @Scope( "session" )
 public class AdminBean {
 
+<<<<<<< HEAD
     private Utilisateur                       curentUtilisateur;
     private List<Utilisateur>                 utilisateurListTest;
     private transient HtmlScrollableDataTable utilisateurTable;
@@ -173,6 +181,12 @@ public class AdminBean {
     public void setUtilisateurListTest( List<Utilisateur> utilisateurListTest ) {
         this.utilisateurListTest = utilisateurListTest;
     }
+=======
+    @Autowired
+    AdminInterface adminInterface;
+
+    private String login;
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     public String getLogin() {
         return login;
@@ -224,7 +238,11 @@ public class AdminBean {
     @SuppressWarnings( {} )
     public void checkValidity() throws IOException {
 
+<<<<<<< HEAD
         FacesContext.getCurrentInstance().getExternalContext().redirect( "acceuilAdmin.jsf" );
+=======
+        FacesContext.getCurrentInstance().getExternalContext().redirect( "pageGestionAdmin.jsf" );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
         login = null;
         motPasse = null;
     }
@@ -298,6 +316,7 @@ public class AdminBean {
                     FacesMessage.SEVERITY_ERROR, "Entrée non valide", "Entrée non valide" ) );
         }
     }
+<<<<<<< HEAD
 
     // surprimer :
 
@@ -317,4 +336,6 @@ public class AdminBean {
         this.utilisateurTable = utilisateurTable;
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

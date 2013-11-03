@@ -31,6 +31,7 @@
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
+<<<<<<< HEAD
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
@@ -39,6 +40,10 @@
 <link href="css/updateAnnonce.css" rel="stylesheet">
 
 <link href="css/propre.css" rel="stylesheet">
+=======
+
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 </head>
 <body>
 	
@@ -58,6 +63,7 @@
 
 					<h:panelGrid columns="3">
 						<h:panelGroup>
+<<<<<<< HEAD
 							<h:outputText value="Login :" />
 							<br>
 							<h:inputText value="#{utilisateurBean.alias}" id="alias"
@@ -71,6 +77,17 @@
 								required="true" validator="#{utilisateurBean.validerEmailAuthentification}" styleClass="champsaisie" />
 							<h:message for="email" style="color: red" />
 						
+=======
+							<h:outputText value="alias :" />
+							<h:inputText value="#{utilisateurBean.alias}" id="alias"
+								required="true" validator="#{utilisateurBean.validerAliasAuthentification}" />
+							<h:message for="alias" style="color: red" />
+							<br>
+							<h:outputText value="Email : " />
+							<h:inputText value="#{utilisateurBean.email}" id="email"
+								required="true" validator="#{utilisateurBean.validerEmailAuthentification}" />
+							<h:message for="email" style="color: red" />
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 						</h:panelGroup>
 					</h:panelGrid>
 

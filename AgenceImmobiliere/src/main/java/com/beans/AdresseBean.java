@@ -1,6 +1,7 @@
 package com.beans;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,6 +12,12 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
+=======
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.faces.context.FacesContext;
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -22,6 +29,7 @@ import com.services.AdresseInterface;
 
 @Controller( "adresseBean" )
 @Scope( "session" )
+<<<<<<< HEAD
 public class AdresseBean implements Serializable {
     /**
      * 
@@ -29,6 +37,11 @@ public class AdresseBean implements Serializable {
     private static final long serialVersionUID = 1L;
     @Autowired
     AdresseInterface          adresseInterface;
+=======
+public class AdresseBean {
+    @Autowired
+    AdresseInterface adresseInterface;
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     public AdresseInterface getAdresseInterface() {
         return adresseInterface;
@@ -43,15 +56,23 @@ public class AdresseBean implements Serializable {
     private Integer      codePostale;
     private String       cartier;
     private Set<Annonce> annonces = new HashSet<Annonce>( 0 );
+<<<<<<< HEAD
     private boolean      isExiste;
 
     @SuppressWarnings( "rawtypes" )
     public void creerAdresse() throws IOException {
         isExiste = false;
+=======
+
+    // Créer une classe Adresse :
+    public void creerAdresse() throws IOException {
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
         Adresse adresse = new Adresse();
         adresse.setCartier( getCartier() );
         adresse.setCodePostale( getCodePostale() );
         adresse.setVille( getVille() );
+<<<<<<< HEAD
         Adresse testAdresseExistance = null;
         List<Adresse> adressAnnonceList = getAdresseInterface().findByExample( adresse );
         for ( Iterator iterator = adressAnnonceList.iterator(); iterator.hasNext(); ) {
@@ -90,6 +111,10 @@ public class AdresseBean implements Serializable {
                     FacesMessage.SEVERITY_ERROR, "Entrée non valide login existe deja",
                     "Entrée non valide login existe deja" ) );
         }
+=======
+        getAdresseInterface().crieerAdresse( adresse );
+        FacesContext.getCurrentInstance().getExternalContext().redirect( "ajouterAnnonce.jsf" );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     }
 
     public int getIdAdresse() {
@@ -132,6 +157,7 @@ public class AdresseBean implements Serializable {
         this.annonces = annonces;
     }
 
+<<<<<<< HEAD
     public boolean isExiste() {
         return isExiste;
     }
@@ -140,4 +166,6 @@ public class AdresseBean implements Serializable {
         this.isExiste = isExiste;
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

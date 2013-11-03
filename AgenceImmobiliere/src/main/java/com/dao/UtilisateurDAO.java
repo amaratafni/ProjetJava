@@ -3,7 +3,10 @@ package com.dao;
 import static org.hibernate.criterion.Example.create;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,7 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
 import com.model.Annonce;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import com.model.Utilisateur;
 
 @Repository
@@ -65,7 +71,11 @@ public class UtilisateurDAO implements UtilisateurDaoInterface {
         log.debug( "finding Utilisateur instance by example" );
         try {
             List<Utilisateur> results = (List<Utilisateur>) sessionFactory.getCurrentSession()
+<<<<<<< HEAD
                     .createCriteria( "com.model.Utilisateur" )
+=======
+                    .createCriteria( "com.dao.Utilisateur" )
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
                     .add( create( instance ) )
                     .list();
             log.debug( "find by example successful, result size: " + results.size() );
@@ -86,6 +96,7 @@ public class UtilisateurDAO implements UtilisateurDaoInterface {
         return crit;
     }
 
+<<<<<<< HEAD
     @Override
     @Transactional
     public void deleteUtilisateurByAnnonce( Set<Annonce> annonces ) {
@@ -105,4 +116,6 @@ public class UtilisateurDAO implements UtilisateurDaoInterface {
         // System.out.println( "voilà le id que j'ai recupèrer" + a );
         return 0;
     }
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

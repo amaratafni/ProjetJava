@@ -38,6 +38,7 @@
 	<filter>
 		<filter-name>RichFaces Filter</filter-name>
 		<filter-class>org.ajax4jsf.Filter</filter-class>
+<<<<<<< HEAD
 		<init-param>
 			<param-name>createTempFiles</param-name>
 			<param-value>false</param-value>
@@ -46,6 +47,8 @@
 			<param-name>maxRequestSize</param-name>
 			<param-value>4000000</param-value>
 		</init-param>
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 	</filter>
 	<filter-mapping>
 		<filter-name>RichFaces Filter</filter-name>

@@ -25,6 +25,7 @@
             <from-outcome>pageAuth</from-outcome>
             <to-view-id>/acceuil.jsp</to-view-id>
         </navigation-case>
+<<<<<<< HEAD
         <navigation-case>
             <from-outcome>detail</from-outcome>
             <to-view-id>/modifcation.jsp</to-view-id>
@@ -102,4 +103,7 @@
         
         </navigation-rule>
         
+=======
+    </navigation-rule>
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 </faces-config>

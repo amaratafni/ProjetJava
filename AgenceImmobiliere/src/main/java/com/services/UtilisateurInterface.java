@@ -1,9 +1,13 @@
 package com.services;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Set;
 
 import com.model.Annonce;
+=======
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import com.model.Utilisateur;
 
 public interface UtilisateurInterface {
@@ -23,9 +27,12 @@ public interface UtilisateurInterface {
     public List<Utilisateur> findByExample( Utilisateur utilisateur );
 
     public List<Utilisateur> findByCreteria( String champs, Object value );
+<<<<<<< HEAD
 
     public void deleteUtilisateurByAnnonce( Set<Annonce> annonces );
 
     public int getIDUser( String alias );
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

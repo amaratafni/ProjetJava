@@ -22,6 +22,7 @@ public interface AnnonceDaoInterace {
 
     public List<Annonce> findByCreteria( String champs, Object value );
 
+<<<<<<< HEAD
     public List<Annonce> DeleteCreteria( String champs, Object value );
 
     void deleteByClasse( Annonce persistentInstance );
@@ -34,4 +35,6 @@ public interface AnnonceDaoInterace {
 
     public void deleteAnnonceByID( int idUser );
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

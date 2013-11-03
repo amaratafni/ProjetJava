@@ -30,6 +30,7 @@ public class AdresseDAO implements AdresseDaoInterface {
     @Transactional
     @Override
     public void deleteAdresse( int idAdresse ) {
+<<<<<<< HEAD
         // sessionFactory.getCurrentSession().delete( getAdresse( idAdresse ) );
         sessionFactory.getCurrentSession().delete( getAdresse( idAdresse ) );
         /*
@@ -38,6 +39,9 @@ public class AdresseDAO implements AdresseDaoInterface {
          * Adresse.class ) .setParameter( "id_adresse", idAdresse );
          * query.executeUpdate();
          */
+=======
+        sessionFactory.getCurrentSession().delete( getAdresse( idAdresse ) );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     }
 
     @Transactional
@@ -60,7 +64,11 @@ public class AdresseDAO implements AdresseDaoInterface {
         log.debug( "finding Adresse instance by example" );
         try {
             List<Adresse> results = (List<Adresse>) sessionFactory.getCurrentSession()
+<<<<<<< HEAD
                     .createCriteria( "com.model.Adresse" )
+=======
+                    .createCriteria( "com.dao.Adresse" )
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
                     .add( create( instance ) )
                     .list();
             log.debug( "find by example successful, result size: " + results.size() );

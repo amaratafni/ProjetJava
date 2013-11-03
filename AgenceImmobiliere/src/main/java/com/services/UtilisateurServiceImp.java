@@ -1,13 +1,19 @@
 package com.services;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.UtilisateurDaoInterface;
+<<<<<<< HEAD
 import com.model.Annonce;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import com.model.Utilisateur;
 
 @Service( "utilisateurService" )
@@ -65,6 +71,7 @@ public class UtilisateurServiceImp implements UtilisateurInterface {
         return getDaoInterface().findByCreteria( champs, value );
     }
 
+<<<<<<< HEAD
     @Override
     public void deleteUtilisateurByAnnonce( Set<Annonce> annonces ) {
 
@@ -77,4 +84,6 @@ public class UtilisateurServiceImp implements UtilisateurInterface {
         // TODO Auto-generated method stub
         return getDaoInterface().getIDUser( alias );
     }
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

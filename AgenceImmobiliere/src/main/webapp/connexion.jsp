@@ -30,11 +30,17 @@
 <title>Insert title here</title>
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet">
+<<<<<<< HEAD
 <link href="css/updateAnnonce.css" rel="stylesheet">
 <link href="css/connexion.css" rel="stylesheet">
 <link href="css/ajouterAnnonce.css" rel="stylesheet">
 <link href="css/ajouterAdresseetanonnce.css" rel="stylesheet">
 <link href="css/propre.css" rel="stylesheet">
+=======
+<link href="css/connexion.css" rel="stylesheet">
+
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 </head>
 <body>
 	
@@ -55,6 +61,7 @@
 					<h:panelGrid columns="3">
 						<h:panelGroup>
 							<h:outputText value="Login :" />
+<<<<<<< HEAD
 							<br>
 							
 							<h:inputText value="#{adminBean.login}" id="login"
@@ -70,6 +77,16 @@
 							<h:message for="motPasse" style="color: red" />
 							
 							<br>
+=======
+							<h:inputText value="#{adminBean.login}" id="login"
+								required="true" validator="#{adminBean.validerLogin}" />
+							<h:message for="login" style="color: red" />
+							<br>
+							<h:outputText value="Pass : " />
+							<h:inputText value="#{adminBean.motPasse}" id="motPasse"
+								required="true" validator="#{adminBean.validerMotPasse}" />
+							<h:message for="motPasse" style="color: red" />
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 						</h:panelGroup>
 					</h:panelGrid>
 

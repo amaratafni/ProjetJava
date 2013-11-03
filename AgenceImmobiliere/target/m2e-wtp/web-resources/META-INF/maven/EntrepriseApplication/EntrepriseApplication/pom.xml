@@ -82,6 +82,7 @@
 			<version>1.2_13</version>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.2.0</version>
@@ -99,20 +100,28 @@
 
 
 		<dependency>
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>1.2_13</version>
 			<scope>runtime</scope>
 		</dependency>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -135,8 +144,13 @@
 			<artifactId>jsf-facelets</artifactId>
 			<version>1.1.14</version>
 		</dependency>
+<<<<<<< HEAD
 
 
+=======
+		
+		
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-impl</artifactId>
@@ -152,14 +166,22 @@
 			<artifactId>richfaces-ui</artifactId>
 			<version>3.3.4.Final</version>
 		</dependency>
+<<<<<<< HEAD
 
 
+=======
+		
+		
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.0.4</version>
 		</dependency>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -186,7 +208,11 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>3.2.2.RELEASE</version>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<!-- hibernate: -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -221,8 +247,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>3.2.4.RELEASE</version>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- Postgres SQL -->
+=======
+		
+		<!--  Postgres SQL -->
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>

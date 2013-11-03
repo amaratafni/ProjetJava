@@ -4,6 +4,7 @@
 	margin: 20px auto;
 	/* box-shadow: 4px 4px 5px #888888; */
 	margin-left: 30%;
+<<<<<<< HEAD
 	
 	margin-top: -24%;
 	-moz-box-shadow: 20px -10px teal;
@@ -35,6 +36,11 @@ width: 70%;
 	margin-top: -31%;
 	margin-left: 30%;
 }
+=======
+	margin-top: -20%;
+}
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 body {
 	position: f;
 	width: 900px;
@@ -51,8 +57,12 @@ label
 }
 .lesInput{
 	margin-left: 201px;
+<<<<<<< HEAD
 }
 #deuxboutonSupEtRetourPageSupprimerUtilisateur{
 	margin-left: 49%;
 	
 }
+=======
+}
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5

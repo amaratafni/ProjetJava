@@ -6,7 +6,10 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+<<<<<<< HEAD
 import org.hibernate.Query;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +34,16 @@ public class AnnonceDAO implements AnnonceDaoInterace {
     @Transactional
     @Override
     public void deleteAnnonce( int idAnnonce ) {
+<<<<<<< HEAD
         // sessionFactory.getCurrentSession().delete( getAnnonce( idAnnonce ) );
         Query query = sessionFactory.getCurrentSession().createSQLQuery(
                 "delete from Annonce  where id_user = :id_user" )
                 .addEntity( Annonce.class )
                 .setParameter( "id_user", idAnnonce );
         query.executeUpdate();
+=======
+        sessionFactory.getCurrentSession().delete( getAnnonce( idAnnonce ) );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     }
 
@@ -68,7 +75,11 @@ public class AnnonceDAO implements AnnonceDaoInterace {
         log.debug( "finding Annonce instance by example" );
         try {
             List<Annonce> results = (List<Annonce>) sessionFactory.getCurrentSession()
+<<<<<<< HEAD
                     .createCriteria( "com.model.Annonce" )
+=======
+                    .createCriteria( "com.dao.Annonce" )
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
                     .add( create( instance ) )
                     .list();
             log.debug( "find by example successful, result size: " + results.size() );
@@ -87,6 +98,7 @@ public class AnnonceDAO implements AnnonceDaoInterace {
         return crit;
     }
 
+<<<<<<< HEAD
     @Override
     @Transactional
     public List<Annonce> DeleteCreteria( String champs, Object value ) {
@@ -141,4 +153,6 @@ public class AnnonceDAO implements AnnonceDaoInterace {
 
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

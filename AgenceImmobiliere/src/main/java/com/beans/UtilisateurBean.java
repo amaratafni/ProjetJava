@@ -1,7 +1,10 @@
 package com.beans;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,7 +16,10 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
+<<<<<<< HEAD
 import org.richfaces.component.html.HtmlScrollableDataTable;
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -29,6 +35,7 @@ import com.services.UtilisateurInterface;
 public class UtilisateurBean {
 
     @Autowired
+<<<<<<< HEAD
     UtilisateurInterface                      utilisateurInterface;
     private int                               idUser;
     private String                            alias;
@@ -53,6 +60,18 @@ public class UtilisateurBean {
 
     private Utilisateur curentUtilisateur;
     SimpleDateFormat    sysdate;
+=======
+    UtilisateurInterface     utilisateurInterface;
+    private int              idUser;
+    private String           alias;
+    private String           name;
+    private String           prenom;
+    private String           email;
+    private Date             dateInscri;
+    private Set<Annonce>     annonces     = new HashSet<Annonce>( 0 );
+    private Set<Statistique> statistiques = new HashSet<Statistique>( 0 );
+    private Set<Filtre>      filtres      = new HashSet<Filtre>( 0 );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     // valeur pour tester mes champs
 
@@ -63,6 +82,7 @@ public class UtilisateurBean {
 
     }
 
+<<<<<<< HEAD
     public Utilisateur getCurentUtilisateur() {
         return curentUtilisateur;
     }
@@ -72,6 +92,8 @@ public class UtilisateurBean {
     }
 
     @SuppressWarnings( "rawtypes" )
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     public void validerAlias( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -100,6 +122,7 @@ public class UtilisateurBean {
         }
     }
 
+<<<<<<< HEAD
     // methode pour récupérer la date du jour :
 
     public String getSysDate() {
@@ -111,11 +134,14 @@ public class UtilisateurBean {
         return DateFormat.format( today );
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     // methode pour créer un Utilisateur :
     public void createUser() throws IOException {
 
         Utilisateur aUtilisateur = new Utilisateur();
         aUtilisateur.setAlias( getAlias() );
+<<<<<<< HEAD
 
         aUtilisateur.setEmail( getEmail() );
         aUtilisateur.setName( getName() );
@@ -133,6 +159,14 @@ public class UtilisateurBean {
 
         utilisateurInterface.crieerUtilisateur( aUtilisateur );
         FacesContext.getCurrentInstance().getExternalContext().redirect( "succes.jsf" );
+=======
+        aUtilisateur.setDateInscri( getDateInscri() );
+        aUtilisateur.setEmail( getEmail() );
+        aUtilisateur.setName( getName() );
+        aUtilisateur.setPrenom( getPrenom() );
+        utilisateurInterface.crieerUtilisateur( aUtilisateur );
+        FacesContext.getCurrentInstance().getExternalContext().redirect( "SuccesInscription.jsf" );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 
     }
 
@@ -143,7 +177,10 @@ public class UtilisateurBean {
 
     }
 
+<<<<<<< HEAD
     @SuppressWarnings( "rawtypes" )
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     public void validerAliasAuthentification( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -158,6 +195,7 @@ public class UtilisateurBean {
             Utilisateur aAdmin = (Utilisateur) iterator.next();
 
             if ( aAdmin.getAlias().equals( valeur ) ) {
+<<<<<<< HEAD
                 if ( aAdmin.getEtat() == true ) {
                     estValide = true;
                     System.out.println( "i am in egalité: voilà .getAdmin" + aAdmin.getAlias() );
@@ -165,20 +203,34 @@ public class UtilisateurBean {
 
                 }
 
+=======
+
+                estValide = true;
+                System.out.println( "i am in egalité: voilà .getAdmin" + aAdmin.getAlias() );
+                System.out.println( "voilà mes truc : " + valeur );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
             }
         }
 
         if ( !estValide ) {
 
             throw new ValidatorException( new FacesMessage(
+<<<<<<< HEAD
                     FacesMessage.SEVERITY_ERROR,
                     "Entrée non valide alias n'existe pas, ou vous etes bloqué par l'admin ",
                     "Entrée non valide alias n'existe pas, ou bloqué par l'admin" ) );
+=======
+                    FacesMessage.SEVERITY_ERROR, "Entrée non valide alias n'existe pas ",
+                    "Entrée non valide alias n'existe pas" ) );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
         }
     }
 
     // verification l'eamil:
+<<<<<<< HEAD
     @SuppressWarnings( "rawtypes" )
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     public void validerEmailAuthentification( FacesContext contexte, UIComponent composant, Object objet ) {
 
         String valeur = null;
@@ -288,6 +340,7 @@ public class UtilisateurBean {
         this.filtres = filtres;
     }
 
+<<<<<<< HEAD
     @SuppressWarnings( "unchecked" )
     public List<Utilisateur> getUtilisateurListTest() {
 
@@ -310,4 +363,6 @@ public class UtilisateurBean {
 
     // for supression :
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

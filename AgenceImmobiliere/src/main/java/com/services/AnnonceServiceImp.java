@@ -44,20 +44,31 @@ public class AnnonceServiceImp implements AnnonceInterface {
 
     }
 
+<<<<<<< HEAD
     @SuppressWarnings( "rawtypes" )
     @Override
     public List getAllAnnonce() {
+=======
+    @Override
+    public List getAllAnnonce() {
+
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
         return getAnnonceDaoInterace().getAllAnnonce();
     }
 
     @Override
     public List<Annonce> findByExample( Annonce annonce ) {
+<<<<<<< HEAD
         return getAnnonceDaoInterace().findByExample( annonce );
     }
 
     @Override
     public void deleteByClasse( Annonce annonce ) {
         getAnnonceDaoInterace().deleteByClasse( annonce );
+=======
+
+        return getAnnonceDaoInterace().findByExample( annonce );
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     }
 
     @Override
@@ -66,6 +77,7 @@ public class AnnonceServiceImp implements AnnonceInterface {
         return getAnnonceDaoInterace().findByCreteria( champs, value );
     }
 
+<<<<<<< HEAD
     @Override
     public List<Annonce> DeleteCreteria( String champs, Object value ) {
         return getAnnonceDaoInterace().DeleteCreteria( champs, value );
@@ -99,4 +111,6 @@ public class AnnonceServiceImp implements AnnonceInterface {
         getAnnonceDaoInterace().deleteAnnonceByID( idUser );
     }
 
+=======
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
 }

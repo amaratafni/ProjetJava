@@ -26,6 +26,7 @@ import org.hibernate.annotations.GenericGenerator;
         , schema = "public" )
 public class Utilisateur implements java.io.Serializable {
 
+<<<<<<< HEAD
     private int    idUser;
     private String alias;
     private String name;
@@ -43,6 +44,14 @@ public class Utilisateur implements java.io.Serializable {
     }
 
     private Boolean          etat;
+=======
+    private int              idUser;
+    private String           alias;
+    private String           name;
+    private String           prenom;
+    private String           email;
+    private Date             dateInscri;
+>>>>>>> 8c63594929b1919f5027131683e9315ed575f7f5
     private Set<Annonce>     annonces     = new HashSet<Annonce>( 0 );
     private Set<Statistique> statistiques = new HashSet<Statistique>( 0 );
     private Set<Filtre>      filtres      = new HashSet<Filtre>( 0 );
